@@ -3,6 +3,7 @@ import yt_dlp
 import os
 import threading
 from tkinter import filedialog, messagebox
+from PIL import Image
 
 # Configurações de aparência
 ctk.set_appearance_mode("dark")
@@ -22,30 +23,38 @@ class App(ctk.CTk):
         super().__init__()
 
         self.title("Youtube Audio Converter")
-        self.geometry("600x450")
+        self.geometry("600x550")
 
-        # Define o caminho do FFmpeg (embutido ou local)
+        # Define os caminhos dos recursos
         self.ffmpeg_path = self.resource_path("ffmpeg.exe")
+        self.logo_path = self.resource_path("yt_icon_white_digital.png")
         
         if not os.path.exists(self.ffmpeg_path):
-            # Fallback para o caminho do sistema caso não esteja embutido ou local
             self.ffmpeg_path = "ffmpeg"
 
         # Layout
         self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(4, weight=1)
+        self.grid_rowconfigure(5, weight=1)
+
+        # Logo
+        if os.path.exists(self.logo_path):
+            logo_image = ctk.CTkImage(light_image=Image.open(self.logo_path),
+                                     dark_image=Image.open(self.logo_path),
+                                     size=(100, 70))
+            self.logo_label = ctk.CTkLabel(self, image=logo_image, text="")
+            self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 0))
 
         # Título
         self.label_title = ctk.CTkLabel(self, text="Youtube Audio Converter", font=ctk.CTkFont(size=24, weight="bold"))
-        self.label_title.grid(row=0, column=0, padx=20, pady=(20, 10))
+        self.label_title.grid(row=1, column=0, padx=20, pady=(10, 10))
 
         # Input URL
         self.entry_url = ctk.CTkEntry(self, placeholder_text="Cole a URL do YouTube aqui...", width=500)
-        self.entry_url.grid(row=1, column=0, padx=20, pady=10)
+        self.entry_url.grid(row=2, column=0, padx=20, pady=10)
 
         # Opções de Formato
         self.frame_options = ctk.CTkFrame(self)
-        self.frame_options.grid(row=2, column=0, padx=20, pady=10)
+        self.frame_options.grid(row=3, column=0, padx=20, pady=10)
 
         self.format_var = ctk.StringVar(value="mp3")
         self.radio_mp3 = ctk.CTkRadioButton(self.frame_options, text="MP3 (320kbps)", variable=self.format_var, value="mp3")
@@ -56,11 +65,11 @@ class App(ctk.CTk):
 
         # Botão Download
         self.btn_download = ctk.CTkButton(self, text="Baixar e Converter", command=self.start_download_thread, font=ctk.CTkFont(weight="bold"))
-        self.btn_download.grid(row=3, column=0, padx=20, pady=20)
+        self.btn_download.grid(row=4, column=0, padx=20, pady=20)
 
         # Log de Status
         self.textbox_log = ctk.CTkTextbox(self, width=500, height=150)
-        self.textbox_log.grid(row=4, column=0, padx=20, pady=(0, 20))
+        self.textbox_log.grid(row=5, column=0, padx=20, pady=(0, 20))
         self.textbox_log.insert("0.0", "Pronto para iniciar...\n")
 
     def log(self, message):
