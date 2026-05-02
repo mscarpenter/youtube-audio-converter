@@ -11,11 +11,11 @@ def download_audio(url, format_type='mp3'):
         print("Erro: Formato inválido. Use 'mp3' ou 'wav'.")
         return
 
-    # Caminho real encontrado no seu PC
-    ffmpeg_exe = r'C:\Users\MySide - User\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffmpeg.exe'
+    # Tenta encontrar o ffmpeg no mesmo diretório do script ou no PATH
+    ffmpeg_exe = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ffmpeg.exe")
     
     if not os.path.exists(ffmpeg_exe):
-        ffmpeg_exe = 'ffmpeg' # Fallback caso o caminho mude futuramente
+        ffmpeg_exe = 'ffmpeg' # Fallback para o PATH do sistema
 
     # Configuration for yt-dlp
     ydl_opts = {
@@ -58,7 +58,7 @@ if __name__ == "__main__":
         download_audio(video_url, fmt)
     else:
         # Interactive mode if no arguments
-        print("--- YouTube Audio Downloader (MP3/WAV) ---")
+        print("--- Youtube Audio Converter (MP3/WAV) ---")
         url = input("Cole a URL do vídeo do YouTube: ").strip()
         if not url:
             print("URL inválida.")

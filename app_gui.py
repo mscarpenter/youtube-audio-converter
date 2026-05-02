@@ -21,7 +21,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("YouTube Audio Downloader Pro")
+        self.title("Youtube Audio Converter")
         self.geometry("600x450")
 
         # Define o caminho do FFmpeg (embutido ou local)
@@ -36,7 +36,7 @@ class App(ctk.CTk):
         self.grid_rowconfigure(4, weight=1)
 
         # Título
-        self.label_title = ctk.CTkLabel(self, text="YouTube to MP3/WAV", font=ctk.CTkFont(size=24, weight="bold"))
+        self.label_title = ctk.CTkLabel(self, text="Youtube Audio Converter", font=ctk.CTkFont(size=24, weight="bold"))
         self.label_title.grid(row=0, column=0, padx=20, pady=(20, 10))
 
         # Input URL
