@@ -15,7 +15,15 @@ Possui uma interface gráfica moderna baseada em `CustomTkinter` e suporte para 
 
 ---
 
-## 🛠️ Pré-requisitos
+## 📥 Download (Para Não-Desenvolvedores)
+Se você não é desenvolvedor e quer apenas usar o programa, não precisa instalar o Python:
+1. Vá na aba [**Releases**](https://github.com/mscarpenter/youtube-audio-converter/releases) (no lado direito).
+2. Baixe o arquivo `app_gui.exe`.
+3. Basta abrir e usar! (O FFmpeg já está embutido no executável).
+
+---
+
+## 🛠️ Pré-requisitos (Para Desenvolvedores)
 
 ### 1. Python e Dependências
 Certifique-se de ter o Python 3.7+ instalado. Instale as bibliotecas necessárias:
@@ -23,8 +31,8 @@ Certifique-se de ter o Python 3.7+ instalado. Instale as bibliotecas necessária
 pip install -r requirements.txt
 ```
 
-### 2. FFmpeg (Essencial)
-O FFmpeg é necessário para a conversão do áudio.
+### 2. FFmpeg
+O FFmpeg é necessário para a conversão do áudio no modo de desenvolvimento.
 - **Windows**:
   - Baixe em [ffmpeg.org](https://ffmpeg.org/download.html).
   - Ou instale via terminal: `winget install ffmpeg`.
@@ -35,13 +43,11 @@ O FFmpeg é necessário para a conversão do áudio.
 ## 🚀 Como Usar
 
 ### Interface Gráfica (GUI)
-Para uma experiência visual:
 ```bash
 python app_gui.py
 ```
 
 ### Linha de Comando (CLI)
-Para uso rápido via terminal:
 ```bash
 # Formato padrão (MP3)
 python youtube_to_audio.py https://www.youtube.com/watch?v=VIDEO_ID
@@ -53,14 +59,13 @@ python youtube_to_audio.py https://www.youtube.com/watch?v=VIDEO_ID wav
 ---
 
 ## 📦 Criando um Executável (.exe)
-Se desejar transformar o projeto em um executável para Windows:
+Se desejar gerar seu próprio executável:
 
 1. Certifique-se de que o `ffmpeg.exe` está na pasta raiz.
-2. Execute o PyInstaller usando o arquivo `.spec` já configurado:
+2. Execute:
 ```bash
 pyinstaller app_gui.spec
 ```
-O executável será gerado na pasta `dist/`.
 
 ---
 
