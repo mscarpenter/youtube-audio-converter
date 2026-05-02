@@ -18,7 +18,7 @@ Possui uma interface gráfica moderna baseada em CustomTkinter e suporte para li
 ## Download (Para Não-Desenvolvedores)
 Se você não é desenvolvedor e quer apenas usar o programa, não precisa instalar o Python:
 1. Vá na aba [**Releases**](https://github.com/mscarpenter/youtube-audio-converter/releases) (no lado direito).
-2. Baixe o arquivo `app_gui.exe`.
+2. Baixe o arquivo `YoutubeAudioConverter.exe`.
 3. Basta abrir e usar! (O FFmpeg já está embutido no executável).
 
 ---
