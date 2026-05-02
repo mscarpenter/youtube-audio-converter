@@ -1,21 +1,21 @@
-# YouTube Audio Downloader Pro 🎵
+# YouTube Audio Downloader Pro
 
-Uma ferramenta poderosa e intuitiva para baixar áudio do YouTube na melhor qualidade disponível, convertendo automaticamente para **MP3 (320kbps)** ou **WAV (Lossless)**.
+Uma ferramenta poderosa e intuitiva para baixar áudio do YouTube na melhor qualidade disponível, convertendo automaticamente para MP3 (320kbps) ou WAV (Lossless).
 
-Possui uma interface gráfica moderna baseada em `CustomTkinter` e suporte para linha de comando.
+Possui uma interface gráfica moderna baseada em CustomTkinter e suporte para linha de comando.
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 - **Alta Qualidade**: Baixa o melhor stream de áudio disponível.
 - **Formatos Suportados**: MP3 (320kbps) ou WAV (sem perda de fidelidade).
 - **Interface Moderna**: GUI responsiva e amigável.
 - **Processamento em Segundo Plano**: Baixe áudios sem travar a interface.
-- **Pasta Organizada**: Salva automaticamente em `C:\Users\MySide - User\Music\Youtube Converter`.
+- **Pasta Organizada**: Salva automaticamente em C:\Users\MySide - User\Music\Youtube Converter.
 
 ---
 
-## 📥 Download (Para Não-Desenvolvedores)
+## Download (Para Não-Desenvolvedores)
 Se você não é desenvolvedor e quer apenas usar o programa, não precisa instalar o Python:
 1. Vá na aba [**Releases**](https://github.com/mscarpenter/youtube-audio-converter/releases) (no lado direito).
 2. Baixe o arquivo `app_gui.exe`.
@@ -23,7 +23,7 @@ Se você não é desenvolvedor e quer apenas usar o programa, não precisa insta
 
 ---
 
-## 🛠️ Pré-requisitos (Para Desenvolvedores)
+## Pré-requisitos (Para Desenvolvedores)
 
 ### 1. Python e Dependências
 Certifique-se de ter o Python 3.7+ instalado. Instale as bibliotecas necessárias:
@@ -40,7 +40,7 @@ O FFmpeg é necessário para a conversão do áudio no modo de desenvolvimento.
 
 ---
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Interface Gráfica (GUI)
 ```bash
@@ -58,7 +58,7 @@ python youtube_to_audio.py https://www.youtube.com/watch?v=VIDEO_ID wav
 
 ---
 
-## 📦 Criando um Executável (.exe)
+## Criando um Executável (.exe)
 Se desejar gerar seu próprio executável:
 
 1. Certifique-se de que o `ffmpeg.exe` está na pasta raiz.
@@ -69,5 +69,5 @@ pyinstaller app_gui.spec
 
 ---
 
-## 📝 Licença
+## Licença
 Este projeto é para fins educacionais. Respeite os termos de serviço do YouTube.
