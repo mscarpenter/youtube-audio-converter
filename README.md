@@ -1,4 +1,4 @@
-# YouTube Audio Downloader Pro
+# Youtube Audio Converter
 
 Uma ferramenta poderosa e intuitiva para baixar áudio do YouTube na melhor qualidade disponível, convertendo automaticamente para MP3 (320kbps) ou WAV (Lossless).
 
